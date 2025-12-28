@@ -46,7 +46,8 @@ $IT = \kappa_0 + \kappa_1 \sum_{i<j} (T^i - T^j)^2 + \kappa_2 (\sum T^k{}^2)^2$
 **Implementation**:
 * [`src/itf_core.py`](src/itf_core.py) — Core Inertia of Time (IT) functions.
 * [`src/itf_tc.py`](src/itf_tc.py) — Full Contraction Tensor (TC) implementation in 4D fiber.
-- notebooks/itf_simulator.ipynb → interactive simulator with eigenvalue evolution plots (PINN-ready)
+
+* [`notebooks/itf_simulator.ipynb`](notebooks/itf_simulator.ipynb) —interactive simulator with eigenvalue evolution plots (PINN-ready)
 
 **Status**: Early-stage theoretical exploration with strong focus on numerical simulation and relativistic MOND analogy.
 
