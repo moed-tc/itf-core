@@ -3,13 +3,15 @@ commits).
 
 This document tracks the conceptual evolution of the theory, comparing the initial canonical draft (v0.1) discussed earlier with the currently published formulation in the repository (MOED-TC/ITF).
 
-### Fundamental Fields:
-- \( g_{\mu\nu} \) — 4D base metric (GR modified implicitly)
-- \( \tau^a \) — three-dimensional internal temporal vector (\( a=1,2,3 \))
-- \( C^a{}_b \) — mixed (1,1) tensor in the 3D internal fiber (compression/misalignment)
-- \( \phi \) — temporal inertia scalar (dynamic penalty term)
+## Version 0.1 — Initial Canonical Draft
 
-### Complete Action Proposed (v0.1): \]
+**Fundamental Fields**:
+- g_{μν} — 4D base metric (GR modified implicitly)
+- τ^a — **three-dimensional** internal temporal vector (a=1,2,3)
+- C^a_b — mixed (1,1) tensor in the 3D internal fiber (compression/misalignment)
+- φ — temporal inertia scalar (dynamic penalty term)
+
+**Complete Action Proposed (v0.1)**:
 S = \int d^4x \sqrt{-g} \left[
 \frac{R}{16\pi G}
 + \frac{1}{2} g^{\mu\nu} \partial_\mu \tau^a \partial_\nu \tau_a
