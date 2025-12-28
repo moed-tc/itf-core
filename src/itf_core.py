@@ -28,7 +28,3 @@ def L_itf(tau1, tau2, tau3, f1=1, f2=1, f3=1, mass=m):
     return kinetic - potential
 
 __all__ = ["It", "L_itf"]
-
-Es
-
-
