@@ -33,6 +33,7 @@ MOED-TC models space-time as locally elastic. Local compression is governed by:
      Harmonic                Isotropies   → Dark energy effect
            ↓
       Particle properties (mass, spin, charge)
+
 ## Relation to MOND
 
 MOED-TC can be viewed as a **relativistic analog of Modified Newtonian Dynamics (MOND)**.
@@ -43,7 +44,7 @@ MOED-TC can be viewed as a **relativistic analog of Modified Newtonian Dynamics 
 
 ## Contraction Tensor (TC)
 
-The TC is a mixed tensor \( T^i_j \) in the 4D internal gauge fiber:
+The TC is a mixed tensor \( T^i_j \) in the 4D internal gauge fiber (diagonal prototype):
 
 \[
 T^i_j = \begin{pmatrix}
@@ -55,7 +56,7 @@ f_1(T_1, T_2, T_3, T_4) & 0 & 0 & 0 \\
 \]
 
 Physical quantities:
-- Trace: \(\mathrm{Tr}(T^2) = \sum f_k^2\)
+- Trace: \(\mathrm{Tr}(T^2) = \sum_{k=1}^4 f_k^2\)
 - Determinant: \(\det(T) = f_1 f_2 f_3 f_4\)
 
 ## Inertia of Time (IT)
@@ -63,20 +64,20 @@ Physical quantities:
 The potential resisting extreme compression:
 
 \[
-\mathrm{IT}(T_1,T_2,T_3,T_4) = \kappa_0 + \kappa_1 \sum_{i<j} (T_i - T_j)^2 + \kappa_2 (T_1^2 + T_2^2 + T_3^2 + T_4^2)^2
+\mathrm{IT}(T_1,T_2,T_3,T_4) = \kappa_0 + \kappa_1 \sum_{1 \leq i < j \leq 4} (T_i - T_j)^2 + \kappa_2 (T_1^2 + T_2^2 + T_3^2 + T_4^2)^2
 \]
 
 Strong growth at high compression prevents singularities and enforces a bounce.
 
 ## Effective 4D Projection
 
-The internal compression projects onto the base space-time as an effective stress-energy contribution:
+The internal compression projects onto the base space-time as an effective stress-energy contribution (simplified isotropic part in the current prototype):
 
 \[
-T^{\rm TC}_{\mu\nu} = \alpha \langle T^i_j \rangle_{\rm fiber} g_{\mu\nu} + \beta \nabla_\mu \nabla_\nu \langle T^i_j \rangle
+T^{\rm TC}_{\mu\nu} = \alpha \left< T^i_i \right>_{\rm fiber} \, g_{\mu\nu}
 \]
 
-(simplified isotropic + deviatoric form in the current prototype)
+where \(\left< \cdot \right>_{\rm fiber}\) denotes the isotropic average over the internal fiber.
 
 ## Repository Contents
 itf-core/
