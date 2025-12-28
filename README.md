@@ -95,14 +95,21 @@ itf-core/
 ├── requirements.txt         # Python dependencies
 └── README.md                # This file
 
-Try It in Google Colab
 
-!git clone https://github.com/YOUR_USERNAME/itf-core.git
-%cd itf-core
-!pip install -r requirements.txt
+## Try It in Google Colab
 
-from src.itf_core import It, L_itf
-print(It(0.1, 0.1, 0.1))
-print(L_itf(1.0, 0.2, 0.3, 0.4))
+Click the badge above to open the interactive simulator.
 
-Replace YOUR_USERNAME with your GitHub username. This setup allows anyone to run the simulator notebook directly in Colab.
+**Tip:** Run the first cell to automatically set up the environment. Then execute the remaining cells in order to see:
+- The 4×4 Contraction Tensor
+- Coupled Inertia of Time potential
+- Evolution of TC eigenvalues (visualizing emergent dark matter, dark energy, and bounce)
+
+## Current Status
+
+This is an **early-stage theoretical exploration**.  
+The goal is to share the core ideas, gather feedback, and iteratively develop the formalism and numerical tests.
+
+Comments, questions, criticisms, and suggestions are very welcome — please open an issue or submit a pull request!
+
+⭐ If the approach interests you, feel free to star the repository to follow future developments.
