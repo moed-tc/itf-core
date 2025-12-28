@@ -39,7 +39,7 @@ $$
 **Action / Lagrangian**:
 - Not explicitly derived in the current README.
 - Effective modification via isotropic projection:  
-  T^{μν}_{TC} ≈ α ⋅ (1/4)(f₁ + f₂ + f₃ + f₄) g^{μν}
+ $T^{\mu\nu}_{TC} \approx \alpha \cdot (1/4)(f_1 + f_2 + f_3 + f_4) g^{\mu\nu}$
 - Emphasis on natural bounce (IT grows strongly under high compression), anisotropic residuals (dark matter-like), isotropic residuals (dark energy-like).
 
 **Implementation**:
