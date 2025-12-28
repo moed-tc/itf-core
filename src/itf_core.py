@@ -1,29 +1,25 @@
-"""
-ITF-Core | Inertia of Time Framework
-Core symbolic definitions and PINN-ready structure.
-"""
-
 import sympy as sp
 
-# Time vector components (3D internal temporal degrees)
-T1, T2, T3 = sp.symbols('T1 T2 T3', real=True)
-T = sp.Matrix([T1, T2, T3])
+# ---- Variáveis simbólicas ----
+t, x, y = sp.symbols('t x y', real=True)
 
-# Metric-like temporal tensor TC (internal temporal geometry)
-TC = sp.Matrix([
-    [sp.Function('f1')(T1, T2, T3), 0, 0],
-    [0, sp.Function('f2')(T1, T2, T3), 0],
-    [0, 0, sp.Function('f3')(T1, T2, T3)]
-])
-
-# Prototype ITF Lagrangian (placeholder)
-def L_itf(m):
+# ---- Função It (inércia temporal) ----
+def It(tau1, tau2, tau3, k0=1.0, k1=1.0, k2=1.0):
     """
-    m : mass / energy scale
+    Inércia Temporal efetiva (prototipo simplificado)
+    tau1,tau2,tau3 = componentes do vetor temporal
     """
-    return m * (T.T * TC * T)[0]
+    desalinhamento = (tau1-tau2)**2 + (tau1-tau3)**2 + (tau2-tau3)**2
+    magnitude = (tau1**2 + tau2**2 + tau3**2)
+    return k0 + k1 * desalinhamento + k2 * (magnitude**2)
 
-if __name__ == "__main__":
-    print("ITF-Core loaded.")
-    print("Temporal vector:", T)
-    print("Temporal tensor:", TC)
+# ---- Lagrangiana efetiva simplificada ----
+def L_itf(t, tau1, tau2, tau3):
+    """
+    Protótipo da Lagrangiana do ITF (versão 0.1)
+    sem termos gravitacionais explícitos
+    """
+    IT = It(tau1, tau2, tau3)
+    return 0.5 * IT * t**2  # termo cinematico mínimo
+
+__all__ = ["It", "L_itf"]
