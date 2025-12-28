@@ -12,15 +12,15 @@ This document tracks the conceptual evolution of the theory, comparing the initi
 
 ### Complete Action Proposed (v0.1):
 
-\[ S = \int d^4x \sqrt{-g} \Bigg[
+\[ S = \int d^4x \sqrt{-g} \left[
 \frac{R}{16\pi G}
 + \frac{1}{2} g^{\mu\nu} \partial_\mu \tau^a \partial_\nu \tau_a
 + \frac{1}{2} g^{\mu\nu} \operatorname{Tr}(\partial_\mu C \, \partial_\nu C)
-+ \frac{\lambda}{4} \Bigl( \operatorname{Tr}(C^2) - 3 \Bigr)^2
++ \frac{\lambda}{4} \left( \operatorname{Tr}(C^2) - 3 \right)^2
 + \frac{1}{2} g^{\mu\nu} \partial_\mu \phi \, \partial_\nu \phi
 + \frac{\beta}{2} \phi^2 (\tau^a \tau_a - 3)^2
 + \alpha R \, \tau^a C_a{}^b \tau_b
-\Bigg] \]
+\right] \]
 
 \[ - **Crucial coupling term**: \( \alpha R \, \tau^a C_a{}^b \tau_b \) — links external curvature, temporal misalignment, and internal compression.
 - **Interpretations**: gravity emerges from temporal misalignment; singularities forbidden via \( \phi \) divergence; dark energy from residual misalignment; dark matter from stable \( C \) modes; causality as a natural dynamic tendency.
