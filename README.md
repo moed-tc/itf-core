@@ -17,7 +17,7 @@ MOED-TC models space-time as locally elastic. Local compression is governed by:
 - Generates particle masses and quantum-like behavior from small space-time oscillations
 - Produces dark matter-like effects from anisotropic residuals of TC
 - Produces dark energy-like effects from isotropic residuals of TC/IT
-              ┌─────────────────────┐
+┌─────────────────────┐
               │   4D Space-Time     │
               │   (base manifold)   │
               └────────┬────────────┘
@@ -46,26 +46,26 @@ MOED-TC can be viewed as a **relativistic analog of Modified Newtonian Dynamics 
 
 The TC is a mixed tensor \( T^i_j \) in the 4D internal gauge fiber (diagonal prototype):
 
-\[
+$$
 T^i_j = \begin{pmatrix}
 f_1(T_1, T_2, T_3, T_4) & 0 & 0 & 0 \\
 0 & f_2(T_1, T_2, T_3, T_4) & 0 & 0 \\
 0 & 0 & f_3(T_1, T_2, T_3, T_4) & 0 \\
 0 & 0 & 0 & f_4(T_1, T_2, T_3, T_4)
 \end{pmatrix}
-\]
+$$
 
 Physical quantities:
-- Trace: \(\mathrm{Tr}(T^2) = \sum_{k=1}^4 f_k^2\)
+- Trace: \(\mathrm{Tr}(T^2) = f_1^2 + f_2^2 + f_3^2 + f_4^2\)
 - Determinant: \(\det(T) = f_1 f_2 f_3 f_4\)
 
 ## Inertia of Time (IT)
 
 The potential resisting extreme compression:
 
-\[
+$$
 \mathrm{IT}(T_1,T_2,T_3,T_4) = \kappa_0 + \kappa_1 \sum_{1 \leq i < j \leq 4} (T_i - T_j)^2 + \kappa_2 (T_1^2 + T_2^2 + T_3^2 + T_4^2)^2
-\]
+$$
 
 Strong growth at high compression prevents singularities and enforces a bounce.
 
@@ -73,13 +73,12 @@ Strong growth at high compression prevents singularities and enforces a bounce.
 
 The internal compression projects onto the base space-time as an effective stress-energy contribution (simplified isotropic part in the current prototype):
 
-\[
-T^{\rm TC}_{\mu\nu} = \alpha \left< T^i_i \right>_{\rm fiber} \, g_{\mu\nu}
-\]
-
-where \(\left< \cdot \right>_{\rm fiber}\) denotes the isotropic average over the internal fiber.
+$$
+T^{\rm TC}_{\mu\nu} = \alpha \cdot \frac{1}{4} (f_1 + f_2 + f_3 + f_4) \, g_{\mu\nu}
+$$
 
 ## Repository Contents
+
 itf-core/
 ├── src/
 │   ├── itf_core.py      # Core Inertia of Time (IT) functions
@@ -88,6 +87,7 @@ itf-core/
 │   └── itf_simulator.ipynb  # Interactive simulator with eigenvalue evolution plots
 ├── requirements.txt     # Python dependencies
 └── README.md            # This file
+
 ## Try It in Google Colab
 
 Click the badge above to open the interactive simulator.
