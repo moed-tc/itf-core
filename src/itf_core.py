@@ -1,25 +1,34 @@
+python
+
 import sympy as sp
 
-# ---- Variáveis simbólicas ----
-t, x, y = sp.symbols('t x y', real=True)
+# ---- Parâmetros simbólicos ----
+kappa_0, kappa_1, kappa_2 = sp.symbols('kappa_0 kappa_1 kappa_2', real=True, positive=True)
+m = sp.symbols('m', real=True, positive=True)  # massa efetiva (para termo cinético)
 
-# ---- Função It (inércia temporal) ----
-def It(tau1, tau2, tau3, k0=1.0, k1=1.0, k2=1.0):
+# ---- Função Inércia do Tempo (IT) ----
+def It(tau1, tau2, tau3, k0=kappa_0, k1=kappa_1, k2=kappa_2):
     """
-    Inércia Temporal efetiva (prototipo simplificado)
-    tau1,tau2,tau3 = componentes do vetor temporal
+    Potencial de Inércia do Tempo (IT)
+    Resiste a desalinhamento e alta magnitude das componentes temporais internas.
     """
-    desalinhamento = (tau1-tau2)**2 + (tau1-tau3)**2 + (tau2-tau3)**2
-    magnitude = (tau1**2 + tau2**2 + tau3**2)
-    return k0 + k1 * desalinhamento + k2 * (magnitude**2)
+    desalinhamento = (tau1 - tau2)**2 + (tau1 - tau3)**2 + (tau2 - tau3)**2
+    magnitude = tau1**2 + tau2**2 + tau3**2
+    return k0 + k1 * desalinhamento + k2 * magnitude**2
 
-# ---- Lagrangiana efetiva simplificada ----
-def L_itf(t, tau1, tau2, tau3):
+# ---- Lagrangiana efetiva (versão toy-model para PINN) ----
+def L_itf(tau1, tau2, tau3, f1=1, f2=1, f3=1, mass=m):
     """
-    Protótipo da Lagrangiana do ITF (versão 0.1)
-    sem termos gravitacionais explícitos
+    Lagrangiana simplificada do Inertia of Time Framework (ITF)
+    Termo cinético anisotrópico nas dimensões internas de tempo
+    menos o potencial IT.
     """
-    IT = It(tau1, tau2, tau3)
-    return 0.5 * IT * t**2  # termo cinematico mínimo
+    kinetic = mass * (f1 * tau1**2 + f2 * tau2**2 + f3 * tau3**2)
+    potential = It(tau1, tau2, tau3)
+    return kinetic - potential
 
 __all__ = ["It", "L_itf"]
+
+Es
+
+
