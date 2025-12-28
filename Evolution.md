@@ -23,6 +23,7 @@ This document tracks the conceptual evolution of the theory, comparing the initi
 + \frac{\beta}{2} \phi^2 (\tau^a \tau_a - 3)^2
 + \alpha R \, \tau^a C_a{}^b \tau_b
 \right] \]
+
 \[ - **Crucial coupling term**: \( \alpha R \, \tau^a C_a{}^b \tau_b \) — links external curvature, temporal misalignment, and internal compression.
 - **Interpretations**: gravity emerges from temporal misalignment; singularities forbidden via \( \phi \) divergence; dark energy from residual misalignment; dark matter from stable \( C \) modes; causality as a natural dynamic tendency.
 
