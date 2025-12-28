@@ -17,9 +17,8 @@ $$
 S = \int d^4x \sqrt{-g} \left[ \frac{R}{16\pi G} - \frac{1}{2} g^{\mu\nu} \partial_\mu \tau^a \partial_\nu \tau_a - \frac{1}{2} g^{\mu\nu} \mathrm{Tr}(\partial_\mu C \partial_\nu C) - \frac{\lambda}{4} \left( \mathrm{Tr}(C^2) - 3 \right)^2 - \frac{1}{2} g^{\mu\nu} \partial_\mu \phi \partial_\nu \phi - \frac{\beta}{2} \phi^2 (\tau^a \tau_a - 3)^2 + \alpha R \tau^a C_a{}^b \tau_b \right]
 $$
 
-
-
-\[ - **Crucial coupling term**: \( \alpha R \, \tau^a C_a{}^b \tau_b \) — links external curvature, temporal misalignment, and internal compression.
+> **Crucial coupling term:** $(\alpha R \tau^a C_a{}^b \tau_b)$ — links external curvature, temporal misalignment, and internal compression.
+> 
 - **Interpretations**: gravity emerges from temporal misalignment; singularities forbidden via \( \phi \) divergence; dark energy from residual misalignment; dark matter from stable \( C \) modes; causality as a natural dynamic tendency.
 
 **Internal Dimensionality**: **3D** fiber (3D temporal vector + 3×3 tensor).
