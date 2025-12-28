@@ -15,48 +15,63 @@ MOED-TC treats space-time as locally elastic rather than perfectly rigid. Local 
 - Generates particle masses and quantum-like behavior from small harmonic oscillations of space-time
 - Produces dark matter-like effects from anisotropic residuals of TC
 - Produces dark energy-like effects from isotropic residuals of TC/IT
-         ┌─────────────────────┐
-              │   4D Space-Time     │
-              │   (base manifold)   │
-              └────────┬────────────┘
-                       │
-           Local elastic compression
-                       │
-              ┌────────▼────────────┐
-              │ Contraction Tensor   │
-              │ TC + Inertia of Time │
-              └────────┬────────────┘
-                       │
-     Oscillations ◄───┘   Anisotropies → Dark matter effect
-     Harmonic                Isotropies   → Dark energy effect
-           ↓
-      Particle properties (mass, spin, charge)
 
 ## Relation to MOND
 
 MOED-TC can be viewed as a **relativistic analog of Modified Newtonian Dynamics (MOND)**.
 
-- MOND (Milgrom, 1983) modifies Newtonian gravity in very low-acceleration regimes to explain galaxy rotation curves without invoking large amounts of dark matter.
+- MOND modifies Newtonian gravity in very low-acceleration regimes to explain galaxy rotation curves without invoking dark matter.
 - MOED-TC introduces similar effective modifications, but directly at the level of General Relativity through local space-time compressibility.
-- Unlike non-relativistic MOND, this approach is fully covariant and aims to address cosmological scales, gravitational lensing, and singularity issues simultaneously.
+- Unlike non-relativistic MOND, this approach is fully covariant and addresses cosmology, lensing, and singularities simultaneously.
 
 ## Core Concepts
 
 ### Contraction Tensor (TC)
-- Mixed tensor \( T^i_j \) transforming in the adjoint representation of SU(2)_L × U(1)_Y
+- Mixed tensor $$T^i_j$$ transforming in the adjoint representation of SU(2)\_L × U(1)\_Y
 - Small oscillations → harmonic modes → emergent particle masses
 - Residual anisotropy → enhanced gravitational clustering (dark matter-like)
 - Residual isotropy → mild repulsion (dark energy-like)
 
+### Contraction Tensor (TC) — Detailed Formulation
+
+The Contraction Tensor in the internal 4D gauge fiber is defined as a mixed (1,1) tensor:
+
+$$
+T^i_j = 
+\begin{pmatrix}
+f_1(T^1,T^2,T^3,T^4) & 0 & 0 & 0 \\
+0 & f_2(T^1,T^2,T^3,T^4) & 0 & 0 \\
+0 & 0 & f_3(T^1,T^2,T^3,T^4) & 0 \\
+0 & 0 & 0 & f_4(T^1,T^2,T^3,T^4)
+\end{pmatrix}
+$$
+
+- **Trace:** $$\mathrm{Tr}(T^2) = T^i_j T^j_i$$  
+- **Determinant:** $$\det(T)$$  
+- **Potential (Inertia of Time):**
+
+$$
+V(T) = \frac{1}{2} k \, \mathrm{Tr}(T^2) + \frac{1}{4} \lambda [\mathrm{Tr}(T^2)]^2 + \frac{1}{4} \mu (\det T)^2
+$$
+
+- **Effective 4D projection onto space-time:**
+
+$$
+T_{\mu\nu}^{\mathrm{TC}} = \alpha \langle T^i_j \rangle_{\text{fiber}} g_{\mu\nu} + \beta \nabla_\mu \nabla_\nu \langle T^i_j \rangle
+$$
+
 ### Inertia of Time (IT)
-\[
+
+$$
 \mathrm{IT}(\tau_1,\tau_2,\tau_3) = \kappa_0 + \kappa_1 \sum_{i<j} (\tau_i - \tau_j)^2 + \kappa_2 (T^\alpha T_\alpha)^2
-\]
+$$
+
 Strong growth at high compression prevents singularities and enforces a bounce.
 
 ### Three Internal Time Dimensions
-Physical observed time = √(τ₁² + τ₂² + τ₃²)  
-Small relative differences between the τ_i provide gauge-like degrees of freedom.
+
+Physical observed time = $$\sqrt{\tau_1^2 + \tau_2^2 + \tau_3^2}$$  
+Small relative differences between the $$\tau_i$$ provide gauge-like degrees of freedom.
 
 ## Example Code (Exploratory / PINN-ready)
 
@@ -69,6 +84,7 @@ def It(t1, t2, t3, k0=1.0, k1=1.0, k2=1.0):
 def L_itf(m, t1, t2, t3, f1=1.0, f2=1.0, f3=1.0):
     kinetic = m * (f1*t1**2 + f2*t2**2 + f3*t3**2)
     return kinetic - It(t1, t2, t3)
+
 Repository Contents
 
 itf-core/
@@ -89,4 +105,4 @@ from src.itf_core import It, L_itf
 print(It(0.1, 0.1, 0.1))
 print(L_itf(1.0, 0.2, 0.3, 0.4))
 
-
+Replace YOUR_USERNAME with your GitHub username. This setup allows anyone to run the simulator notebook directly in Colab.
