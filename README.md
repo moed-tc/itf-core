@@ -1,2 +1,92 @@
-# itf-core
-Core equations, PINN-ready simulator templates and cosmological predictions of the Inertia of Time Framework (ITF).
+# MOED-TC | Modified Einstein Dynamics via Contraction Tensor
+
+> A theoretical framework proposing **local compressibility of space-time**, regulated by a Contraction Tensor (TC) and Inertia of Time (IT).  
+> Designed as a fully relativistic modification inspired by the spirit of MOND, but applied directly to Einstein's equations.
+
+## Overview
+
+MOED-TC treats space-time as locally elastic rather than perfectly rigid. Local compression and its dynamics are governed by:
+
+- **Contraction Tensor (TC)** – a mixed (1,1) tensor in an internal gauge fiber, describing elastic deformation.
+- **Inertia of Time (IT)** – a potential that resists extreme compression and misalignment of internal time coordinates.
+
+### Key Features
+- Avoids singularities (black holes and Big Bang) via a natural bounce mechanism
+- Generates particle masses and quantum-like behavior from small harmonic oscillations of space-time
+- Produces dark matter-like effects from anisotropic residuals of TC
+- Produces dark energy-like effects from isotropic residuals of TC/IT
+         ┌─────────────────────┐
+              │   4D Space-Time     │
+              │   (base manifold)   │
+              └────────┬────────────┘
+                       │
+           Local elastic compression
+                       │
+              ┌────────▼────────────┐
+              │ Contraction Tensor   │
+              │ TC + Inertia of Time │
+              └────────┬────────────┘
+                       │
+     Oscillations ◄───┘   Anisotropies → Dark matter effect
+     Harmonic                Isotropies   → Dark energy effect
+           ↓
+      Particle properties (mass, spin, charge)
+
+## Relation to MOND
+
+MOED-TC can be viewed as a **relativistic analog of Modified Newtonian Dynamics (MOND)**.
+
+- MOND (Milgrom, 1983) modifies Newtonian gravity in very low-acceleration regimes to explain galaxy rotation curves without invoking large amounts of dark matter.
+- MOED-TC introduces similar effective modifications, but directly at the level of General Relativity through local space-time compressibility.
+- Unlike non-relativistic MOND, this approach is fully covariant and aims to address cosmological scales, gravitational lensing, and singularity issues simultaneously.
+
+## Core Concepts
+
+### Contraction Tensor (TC)
+- Mixed tensor \( T^i_j \) transforming in the adjoint representation of SU(2)_L × U(1)_Y
+- Small oscillations → harmonic modes → emergent particle masses
+- Residual anisotropy → enhanced gravitational clustering (dark matter-like)
+- Residual isotropy → mild repulsion (dark energy-like)
+
+### Inertia of Time (IT)
+\[
+\mathrm{IT}(\tau_1,\tau_2,\tau_3) = \kappa_0 + \kappa_1 \sum_{i<j} (\tau_i - \tau_j)^2 + \kappa_2 (T^\alpha T_\alpha)^2
+\]
+Strong growth at high compression prevents singularities and enforces a bounce.
+
+### Three Internal Time Dimensions
+Physical observed time = √(τ₁² + τ₂² + τ₃²)  
+Small relative differences between the τ_i provide gauge-like degrees of freedom.
+
+## Example Code (Exploratory / PINN-ready)
+
+```python
+def It(t1, t2, t3, k0=1.0, k1=1.0, k2=1.0):
+    misalignment = (t1-t2)**2 + (t1-t3)**2 + (t2-t3)**2
+    magnitude = t1**2 + t2**2 + t3**2
+    return k0 + k1 * misalignment + k2 * magnitude**2
+
+def L_itf(m, t1, t2, t3, f1=1.0, f2=1.0, f3=1.0):
+    kinetic = m * (f1*t1**2 + f2*t2**2 + f3*t3**2)
+    return kinetic - It(t1, t2, t3)
+Repository Contents
+
+itf-core/
+├── src/
+│   └── itf_core.py          # Core prototype functions
+├── notebooks/
+│   └── itf_simulator.ipynb  # Exploratory simulations and examples
+├── requirements.txt         # Python dependencies
+└── README.md                # This file
+
+Try It in Google Colab
+
+!git clone https://github.com/YOUR_USERNAME/itf-core.git
+%cd itf-core
+!pip install -r requirements.txt
+
+from src.itf_core import It, L_itf
+print(It(0.1, 0.1, 0.1))
+print(L_itf(1.0, 0.2, 0.3, 0.4))
+
+
