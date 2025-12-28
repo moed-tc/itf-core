@@ -31,7 +31,7 @@ $$
 - Base: standard 4D space-time
 - Internal fiber: **4D** (internal coordinates T¹, T², T³, T⁴)
 - **Contraction Tensor (TC)**: mixed (1,1) tensor in the 4D internal gauge fiber (diagonal prototype)  
-  T^j_i = diag( f₁(T¹,T²,T³,T⁴), f₂, f₃, f₄ )
+   $T^j{}_i = \text{diag}(f_1(T^1, T^2, T^3, T^4), f_2, f_3, f_4)$
 - **Inertia of Time (IT)**: scalar potential (not a separate dynamical field)  
   IT = κ₀ + κ₁ ∑_{i<j} (T^i - T^j)² + κ₂ (∑ T^k²)²
 - No explicit φ scalar, no 3D temporal vector τ, no explicit kinetic terms for τ/C.
