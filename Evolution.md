@@ -5,7 +5,7 @@ This document tracks the conceptual evolution of the theory, comparing the initi
 ## Version 0.1 — Initial Canonical Draft
 
 **Fundamental Fields**:
-- g_mu_nu — 4D base metric (GR modified implicitly)
+- g_{μν} — 4D base metric (GR modified implicitly)
 - τ^a — **three-dimensional** internal temporal vector (a=1,2,3)
 - C^a_b — mixed (1,1) tensor in the 3D internal fiber (compression/misalignment)
 - φ — temporal inertia scalar (dynamic penalty term)
