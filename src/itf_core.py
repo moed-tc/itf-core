@@ -1,5 +1,3 @@
-python
-
 import sympy as sp
 
 # ---- Parâmetros simbólicos ----
