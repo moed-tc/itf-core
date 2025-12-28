@@ -56,8 +56,14 @@ f_1(T_1, T_2, T_3, T_4) & 0 & 0 & 0 \\
 $$
 
 Physical quantities:
-- Trace: \(\mathrm{Tr}(T^2) = f_1^2 + f_2^2 + f_3^2 + f_4^2\)
-- Determinant: \(\det(T) = f_1 f_2 f_3 f_4\)
+
+$$
+\mathrm{Tr}(T^2) = f_1^2 + f_2^2 + f_3^2 + f_4^2
+$$
+
+$$
+\det(T) = f_1 f_2 f_3 f_4
+$$
 
 ## Inertia of Time (IT)
 
