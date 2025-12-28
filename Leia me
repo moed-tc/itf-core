@@ -1,0 +1,44 @@
+MOED-TC | Dinâmica de Einstein Modificada via Tensor de Contração
+> Proposta teórica de compressibilidade local do espaço-tempo, regulada por um Tensor de Contração (TC) e pela Inércia do Tempo (IT).
+> Uma extensão puramente relativística inspirada no espírito do MOND, aplicada diretamente às equações de campo de Einstein.
+> 
+Visão Geral
+O framework MOED-TC modela o espaço-tempo como uma estrutura localmente elástica. Esta compressão é governada por dois pilares:
+ * Tensor de Contração (TC): Um tensor misto (1,1) em uma fibra de gauge interna 4D que descreve a deformação elástica das coordenadas.
+ * Inércia do Tempo (IT): Um potencial escalar que resiste à compressão extrema e ao desalinhamento das coordenadas temporais internas.
+Principais Características
+ * Prevenção de Singularidades: Evita Buracos Negros e Big Bangs via um mecanismo natural de "bounce" (repulsão) quando a IT cresce exponencialmente sob compressão.
+ * Mecanismo de Partículas: Gera massas e comportamentos do tipo quântico a partir de pequenas oscilações harmônicas do espaço-tempo.
+ * Matéria Escura Emergente: Efeitos gravitacionais gerados pelos resíduos anisotrópicos (dispersão de autovalores) do TC.
+ * Energia Escura Emergente: Efeitos gerados pelos resíduos isotrópicos da compressão volumétrica e do potencial IT.
+Relação com MOND
+O MOED-TC pode ser interpretado como um análogo relativístico da Dinâmica Newtoniana Modificada (MOND).
+ * O MOND modifica a gravidade em regimes de baixa aceleração para explicar curvas de rotação de galáxias.
+ * O MOED-TC introduz modificações efetivas diretamente na Relatividade Geral através da compressibilidade geométrica local.
+ * O framework é totalmente covariante e aborda cosmologia, lentes gravitacionais e singularidades.
+Tensor de Contração (TC)
+O TC é definido como o tensor misto T^j{}_i na fibra interna 4D (protótipo diagonal):
+Grandezas físicas derivadas:
+ * Força de Compressão Quadrática: \mathrm{Tr}(T^2) = f_1^2 + f_2^2 + f_3^2 + f_4^2
+ * Fator de Volume de Compressão: \det(T) = f_1 f_2 f_3 f_4
+Inércia do Tempo (IT)
+O potencial que resiste à compressão extrema:
+O forte crescimento deste potencial em alta compressão impede singularidades e força o efeito de "bounce".
+Projeção 4D Efetiva
+A compressão interna projeta-se no espaço-tempo base como uma contribuição efetiva ao tensor de energia-momento (parte isotrópica simplificada):
+Conteúdo do Repositório
+itf-core/
+├── src/
+│   ├── itf_core.py      # Funções principais da Inércia do Tempo (IT)
+│   └── itf_tc.py        # Implementação do Tensor de Contração (TC) em fibra 4D
+├── notebooks/
+│   └── itf_simulator.ipynb  # Simulador interativo com gráficos de autovalores
+├── requirements.txt     # Dependências Python
+└── README.md            # Este arquivo
+
+Experimente no Google Colab
+Clique no selo no topo da página para abrir o simulador interativo. Execute as células para visualizar expressões simbólicas e os gráficos de evolução de autovalores que demonstram o comportamento emergente de matéria escura, energia escura e o mecanismo de bounce.
+Status Atual
+Este é um estudo teórico em estágio inicial. O objetivo é compartilhar as ideias centrais, reunir feedback e desenvolver iterativamente o formalismo e os testes numéricos.
+Comentários, perguntas, críticas e sugestões são muito bem-vindos — sinta-se à vontade para abrir uma issue ou enviar um pull request!
+⭐ Se a abordagem lhe interessa, considere marcar o repositório com uma estrela para acompanhar os desenvolvimentos futuros.
